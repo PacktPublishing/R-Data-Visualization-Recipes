@@ -1,0 +1,17 @@
+## STEP 1: DOWNLOAD THE FONTS
+library(downloader)
+download('http://bit.do/fbfont', 'facebook-letter-faces.ttf', mode = 'wb')
+download('http://bit.do/google_font', 'product-sans.ttf', mode = 'wb')
+download('http://bit.do/circularfont1', 'Circular Air-Medium 3.46.45 PM.ttf', mode = 'wb')
+download('http://bit.do/circularfont2', 'Circular Air-Bold 3.46.45 PM.ttf', mode = 'wb')
+download('http://bit.do/picofont', 'pico-black.ttf', mode = 'wb')
+download('http://bit.do/arisafont', 'arista-light.ttf', mode = 'wb')
+## STEP 2: INSTALL FONTS (GO TO YOUR WORKING DIRECTORY)
+## STEP 3: IMPORT FONTS USING extrafont
+library(extrafont)
+font_import(pattern = 'facebook-letter-faces.ttf', prompt = F)
+font_import(pattern = 'Circular', prompt = F)
+font_import(pattern = 'Circular', prompt = F)
+font_import(pattern = 'product-sans.ttf', prompt = F)
+font_import(pattern = 'pico-black.ttf', prompt = F)
+font_import(pattern = 'arista-light.ttf', prompt = F)

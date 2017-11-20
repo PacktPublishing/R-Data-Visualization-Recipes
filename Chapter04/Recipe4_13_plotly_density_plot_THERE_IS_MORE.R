@@ -1,0 +1,11 @@
+library(dplyr)
+data_setosa <- iris %>% filter(Species == 'setosa') %>% pull(Petal.Length) %>% density()
+data_setosa <- data.frame(Petal.Length = data_setosa$x,density = data_setosa$y)
+data_versicolor <- iris %>% filter(Species == 'versicolor') %>% pull(Petal.Length) %>% density()
+data_versicolor <- data.frame(Petal.Length = data_versicolor$x,density = data_versicolor$y)
+data_virginica <- iris %>% filter(Species == 'virginica') %>% pull(Petal.Length) %>% density()
+data_virginica <- data.frame(Petal.Length = data_virginica$x,density = data_virginica$y)
+
+library(plotly)
+pl_petal <- plot_ly(data = data_setosa, x = ~Petal.Length, y = ~density, type = 'scatter', mode = 'lines', fill = 'tozeroy')
+pl_petal %>% add_trace(data = data_versicolor) %>% add_trace(data = data_virginica)
